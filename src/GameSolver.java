@@ -12,12 +12,15 @@ public class GameSolver {
 	 * @return the answer of anyNumberGame
 	 */
 	public int play(NumberGame game) {
-		int i = 0;
+		int lowerBound = 1;
+		int upperBound = game.getUpperBound();
 		while (true) {
-			i++;
-			if (game.guess(i)) {
-				System.out.print("The answer number is ");
-				return i;
+			if (game.guess((lowerBound+upperBound)/2)) {
+				return (lowerBound+upperBound)/2;
+			} else if(game.getMessage().contains("bigger than")){
+				lowerBound = (lowerBound+upperBound)/2;
+			} else {
+				upperBound = (lowerBound+upperBound)/2;
 			}
 		}
 	}
