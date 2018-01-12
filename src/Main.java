@@ -1,17 +1,17 @@
 /**
- * A main class for the GuessingGame.
- * It is responsible for creating objects, 
+ * A main class for the GuessingGame. It is responsible for creating objects,
  * connecting objects, and running the game UI.
+ * 
+ * @author Kornphon Noiprasert
  */
 public class Main {
 	public static void main(String[] args) {
 		// upper limit for secret number in guessing game
 		int upperBound = 100;
-		NumberGame game = new SampleGame(upperBound);
-		GameConsole ui = new GameConsole( );
-		int solution = ui.play( game );
-		//TODO display the answer returned by play
-		System.out.println("play() returned "+solution);
-		//TODO display how many guesses the user made
+		NumberGame game = new KornphonGame(upperBound);
+		GameConsole ui = new GameConsole();
+		int solution = ui.play(game);
+		System.out.println("play() returned " + solution);
+		System.out.println("times() returned " + game.getCount());
 	}
 }
