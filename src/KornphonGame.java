@@ -68,16 +68,6 @@ public class KornphonGame extends NumberGame {
 		return this.upperBound;
 	}
 
-	/** 
-	 * Get the game answer number. 
-	 * 
-	 * @return the answer number of this game.
-	 * */
-	@Override
-	public int getSecretNumber() {
-		return secretNumber;
-	}
-
 	/**
 	 * Get the times that user guesses the number.
 	 * 

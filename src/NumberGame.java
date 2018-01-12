@@ -65,15 +65,6 @@ public class NumberGame {
 		return 0;
 	}
 
-	/** 
-	 * Get the game answer number. 
-	 * 
-	 * @return the answer number of this game.
-	 * */
-	public int getSecretNumber() {
-		return 0;
-	}
-
 	/**
 	 * toString describes the game or problem.
 	 * 

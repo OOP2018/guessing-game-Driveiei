@@ -1,8 +1,10 @@
 /**
  * Automatically find the answer of secret number to any NumberGame.
+ * 
+ * @author Kornphon Noiprasert
  */
 public class GameSolver {
-	
+
 	/**
 	 * Play a NumberGame and return the solution of the answer to any NumberGame.
 	 * 
@@ -13,9 +15,9 @@ public class GameSolver {
 		int i = 0;
 		while (true) {
 			i++;
-			if (i == game.getSecretNumber()) {
+			if (game.guess(i)) {
 				System.out.print("The answer number is ");
-				return game.getSecretNumber();
+				return i;
 			}
 		}
 	}
