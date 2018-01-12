@@ -4,6 +4,10 @@
  * @author Kornphon Noiprasert
  */
 public class GameSolver {
+	
+	public GameSolver(){
+		
+	}
 
 	/**
 	 * Play a NumberGame and return the solution of the answer to any NumberGame.
@@ -13,15 +17,17 @@ public class GameSolver {
 	 */
 	public int play(NumberGame game) {
 		int lowerBound = 1;
-		int upperBound = game.getUpperBound();
+		int upperBound = game.getUpperBound()+1;
+		int number = (lowerBound+upperBound)/2;
 		while (true) {
-			if (game.guess((lowerBound+upperBound)/2)) {
-				return (lowerBound+upperBound)/2;
+			if (game.guess(number)) {
+				return number;
 			} else if(game.getMessage().contains("bigger than")){
-				lowerBound = (lowerBound+upperBound)/2;
+				lowerBound = number;
 			} else {
-				upperBound = (lowerBound+upperBound)/2;
+				upperBound = number;
 			}
+			number = (lowerBound+upperBound)/2;
 		}
 	}
 }
