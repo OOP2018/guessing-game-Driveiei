@@ -18,7 +18,7 @@ public class GameSolver {
 	public int play(NumberGame game) {
 		int lowerBound = 1;
 		int upperBound = game.getUpperBound()+1;
-		int number = (lowerBound+upperBound)/2;
+		int number = lowerBound + (upperBound-lowerBound)/2;
 		while (true) {
 			if (game.guess(number)) {
 				return number;
@@ -27,7 +27,7 @@ public class GameSolver {
 			} else {
 				upperBound = number;
 			}
-			number = (lowerBound+upperBound)/2;
+			number = lowerBound + (upperBound-lowerBound)/2;
 		}
 	}
 }
