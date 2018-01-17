@@ -52,10 +52,10 @@ public class KornphonGame extends NumberGame {
 			return true;
 		}
 		if (number < secretNumber) {
-			setMessage("Wrong! The answer is bigger than " + number + ".");
+			setMessage("Wrong! The answer is too small - " + number + ".");
 			return false;
 		}
-		setMessage("Wrong! The answer is smaller than " + number + ".");
+		setMessage("Wrong! The answer is too large - " + number + ".");
 		return false;
 	}
 

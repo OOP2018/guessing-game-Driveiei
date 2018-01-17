@@ -4,9 +4,9 @@
  * @author Kornphon Noiprasert
  */
 public class GameSolver {
-	
-	public GameSolver(){
-		
+
+	public GameSolver() {
+
 	}
 
 	/**
@@ -17,17 +17,18 @@ public class GameSolver {
 	 */
 	public int play(NumberGame game) {
 		int lowerBound = 1;
-		int upperBound = game.getUpperBound()+1;
-		int number = lowerBound + (upperBound-lowerBound)/2;
-		while (true) {
-			if (game.guess(number)) {
-				return number;
-			} else if(game.getMessage().contains("bigger than")){
+		int upperBound = game.getUpperBound() + 1;
+		int number = 0;
+		boolean correct = true;
+		while (correct) {
+			number = lowerBound + (upperBound - lowerBound) / 2;
+			correct = !game.guess(number);
+			if (game.getMessage().contains("too small")) {
 				lowerBound = number;
 			} else {
 				upperBound = number;
 			}
-			number = lowerBound + (upperBound-lowerBound)/2;
 		}
+		return number;
 	}
 }
