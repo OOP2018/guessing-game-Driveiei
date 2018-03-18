@@ -18,7 +18,6 @@ public class GameController {
 	private LastView view2;
 	private int upperBound;
 
-	
 	/**
 	 * JavaFX calls the initialize() method of your controller when it creates the
 	 * UI form, after the components have been created and @FXML annotated
@@ -43,7 +42,7 @@ public class GameController {
 		try {
 			String input = textfield1.getText();
 			int number = Integer.parseInt(input);
-			if(game.guess(number)) {
+			if (game.guess(number)) {
 				label1.setText(game.getMessage());
 			} else {
 				label1.setText(game.getMessage());
@@ -58,15 +57,15 @@ public class GameController {
 
 	/**
 	 * Clear all text for ready to used.
-	 * */
+	 */
 	public void handleClear(ActionEvent event) {
 		textfield1.clear();
 		label1.setText("");
 	}
-	
+
 	/**
 	 * Clear all text for ready to used.
-	 * */
+	 */
 	public void handleNewGame(ActionEvent event) {
 		upperBound = 100;
 		game = new KornphonGame(upperBound);
@@ -77,5 +76,5 @@ public class GameController {
 		view2 = new LastView(game);
 		view2.run();
 	}
-	
+
 }

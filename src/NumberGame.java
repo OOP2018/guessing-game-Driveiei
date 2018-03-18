@@ -20,7 +20,8 @@ public class NumberGame {
 	/**
 	 * Evaluate a user's answer to the game.
 	 * 
-	 * @param answer is the user's answer, as an integer.
+	 * @param answer
+	 *            is the user's answer, as an integer.
 	 * @return true if correct, false otherwise
 	 */
 	public boolean guess(int answer) {
@@ -60,16 +61,16 @@ public class NumberGame {
 	 * Get the times that user guesses the number.
 	 * 
 	 * @return times that user guesses the number.
-	 * */
+	 */
 	public int getCount() {
 		return 0;
 	}
-	
+
 	/**
 	 * Get the number that user guesses the last time.
 	 * 
 	 * @return number that user guesses the last time.
-	 * */
+	 */
 	public int getLastGuess() {
 		return 0;
 	}

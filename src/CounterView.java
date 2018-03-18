@@ -9,9 +9,8 @@ import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
 /**
- * A Controller for a window that shows the value of a Counter.
- * This has only one component (but you can add more components),
- * so write it in code instead of FXML.
+ * A Controller for a window that shows the value of a Counter. This has only
+ * one component.
  *
  * @author Kornphon Noiprasert
  */
@@ -19,19 +18,24 @@ public class CounterView implements java.util.Observer {
 	/** the stage (top-level window) for showing scene */
 	private Stage stage;
 	/** a counter to show value of */
-	private NumberGame game ;
+	private NumberGame game;
 	/** the label that shows the counter value. */
 	private Label label;
-	
+
 	/**
 	 * Initialize a CounterView, which shows value of a counter.
-	 * @param counter the Counter to show.
+	 * 
+	 * @param counter
+	 *            the Counter to show.
 	 */
 	public CounterView(NumberGame game) {
 		this.game = game;
 		initComponents();
 	}
-	
+
+	/**
+	 * To initialize the components of the window.
+	 */
 	private void initComponents() {
 		stage = new Stage();
 		// components and containers for our window
@@ -44,7 +48,7 @@ public class CounterView implements java.util.Observer {
 		label.setPrefWidth(400);
 		label.setFont(new Font("Arial", 30));
 		label.setAlignment(Pos.CENTER);
-		// Add the label to the HBox.  You can all more components, too.
+		// Add the label to the HBox. You can all more components, too.
 		root.getChildren().add(label);
 		// Create a Scene using HBox as the root element
 		Scene scene = new Scene(root);
@@ -53,24 +57,30 @@ public class CounterView implements java.util.Observer {
 		stage.setTitle("Counter");
 		stage.sizeToScene();
 	}
-	
+
 	/** Show the window and update the counter value. */
 	public void run() {
 		stage.show();
 		displayCount();
 	}
-	
-	/** Close the window.*/
+
+	/** Close the window. */
 	public void close() {
 		stage.close();
 	}
-	
+
+	/** Show how many times that user guessing the number. */
 	public void displayCount() {
-		label.setText( String.format("You guessed %2d times", game.getCount()) );
+		label.setText(String.format("You guessed %2d times", game.getCount()));
 	}
 
+	/**
+	 * This method is called whenever the observed object is changed. An application
+	 * calls an Observable object's notifyObservers method to have all the object's
+	 * observers notified of the change.
+	 */
 	@Override
 	public void update(Observable o, Object arg) {
 		displayCount();
-	}	
+	}
 }

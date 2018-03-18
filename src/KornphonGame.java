@@ -13,7 +13,7 @@ public class KornphonGame extends NumberGame {
 	private int secretNumber;
 	/** the number of times that user guesses */
 	private int times = 0;
-	/** The number that the user guesses last time*/
+	/** The number that the user guesses last time */
 	private int lastGuess = 0;
 
 	/** Initialize a new default game. */
@@ -30,7 +30,7 @@ public class KornphonGame extends NumberGame {
 	 * Initialize a new game with maximum number that user set
 	 * 
 	 * @param upperBound is the maximum number of guesses number.
-	 * */
+	 */
 	public KornphonGame(int upperBound) {
 		final int lowerBound = 1;
 		this.upperBound = upperBound;
@@ -62,10 +62,11 @@ public class KornphonGame extends NumberGame {
 		return false;
 	}
 
-	/** Get the game upper bound. 
+	/**
+	 * Get the game upper bound.
 	 * 
 	 * @return the maximum number of guesses number.
-	 * */
+	 */
 	@Override
 	public int getUpperBound() {
 		return this.upperBound;
@@ -75,22 +76,22 @@ public class KornphonGame extends NumberGame {
 	 * Get the times that user guesses the number.
 	 * 
 	 * @return times that user guesses the number.
-	 * */
+	 */
 	@Override
 	public int getCount() {
 		return times;
 	}
-	
+
 	/**
 	 * Get the number that user guesses the last time.
 	 * 
 	 * @return number that user guesses the last time.
-	 * */
+	 */
 	@Override
 	public int getLastGuess() {
 		return lastGuess;
 	}
-	
+
 	/**
 	 * toString describes the game or problem.
 	 * 
