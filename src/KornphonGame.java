@@ -13,6 +13,8 @@ public class KornphonGame extends NumberGame {
 	private int secretNumber;
 	/** the number of times that user guesses */
 	private int times = 0;
+	/** The number that the user guesses last time*/
+	private int lastGuess = 0;
 
 	/** Initialize a new default game. */
 	public KornphonGame() {
@@ -47,6 +49,7 @@ public class KornphonGame extends NumberGame {
 	 */
 	public boolean guess(int number) {
 		times++;
+		lastGuess = number;
 		if (number == secretNumber) {
 			setMessage("Correct! The secret number is " + secretNumber);
 			return true;
@@ -76,6 +79,16 @@ public class KornphonGame extends NumberGame {
 	@Override
 	public int getCount() {
 		return times;
+	}
+	
+	/**
+	 * Get the number that user guesses the last time.
+	 * 
+	 * @return number that user guesses the last time.
+	 * */
+	@Override
+	public int getLastGuess() {
+		return lastGuess;
 	}
 	
 	/**

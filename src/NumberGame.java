@@ -64,6 +64,15 @@ public class NumberGame {
 	public int getCount() {
 		return 0;
 	}
+	
+	/**
+	 * Get the number that user guesses the last time.
+	 * 
+	 * @return number that user guesses the last time.
+	 * */
+	public int getLastGuess() {
+		return 0;
+	}
 
 	/**
 	 * toString describes the game or problem.

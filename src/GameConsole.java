@@ -6,7 +6,7 @@ import java.util.Scanner;
  * @author Kornphon Noiprasert
  */
 public class GameConsole {
-
+	
 	/** play the game. */
 	public int play(NumberGame game) {
 		Scanner console = new Scanner(System.in);
@@ -24,5 +24,4 @@ public class GameConsole {
 			}
 		}
 	}
-
 }

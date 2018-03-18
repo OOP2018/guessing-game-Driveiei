@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="287.0" prefWidth="367.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GameController">
+   <top>
+      <FlowPane alignment="CENTER" hgap="20.0" prefHeight="309.0" prefWidth="367.0" vgap="15.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="34.0" prefWidth="310.0" text="Guess the Secret number" textAlignment="CENTER">
+               <font>
+                  <Font size="23.0" />
+               </font></Label>
+            <Label alignment="CENTER" prefHeight="21.0" prefWidth="259.0" text="Guess the number between 1 - 100" />
+            <Label text="Your answer? " />
+            <TextField fx:id="textfield1" onAction="#handleSubmit" prefHeight="31.0" prefWidth="61.0" />
+            <Label fx:id="label1" prefHeight="49.0" prefWidth="251.0" />
+            <Button mnemonicParsing="false" onAction="#handleSubmit" text="Submit" />
+            <Button mnemonicParsing="false" onAction="#handleClear" text="Clear" />
+            <Button mnemonicParsing="false" onAction="#handleNewGame" text="New Game" />
+         </children>
+         <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </padding>
+      </FlowPane>
+   </top>
+   <opaqueInsets>
+      <Insets />
+   </opaqueInsets>
+</BorderPane>
