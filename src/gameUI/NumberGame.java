@@ -1,3 +1,4 @@
+package gameUI;
 /**
  * The base class for all number games. Your guessing game should extend this
  * class and override the methods: guess(), toString(), getUpperBound().
@@ -7,7 +8,7 @@
  * 
  * @author Kornphon Noiprasert
  */
-public class NumberGame {
+public class NumberGame extends java.util.Observable{
 	/** A helpful message for user. */
 	private String message;
 

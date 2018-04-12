@@ -1,3 +1,4 @@
+package gameUI;
 /**
  * Automatically find the answer of secret number to any NumberGame.
  * 

@@ -1,3 +1,4 @@
+package gameUI;
 import java.util.Observable;
 
 import javafx.geometry.Insets;
@@ -9,12 +10,13 @@ import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
 /**
- * A Controller for a window that shows the value of a Counter. This has only
- * one component.
+ * A Controller for a window that shows the number of last time the user
+ * guessed. This has only one component (but you can add more components), so
+ * write it in code instead of FXML.
  *
  * @author Kornphon Noiprasert
  */
-public class CounterView implements java.util.Observer {
+public class LastView implements java.util.Observer {
 	/** the stage (top-level window) for showing scene */
 	private Stage stage;
 	/** a counter to show value of */
@@ -25,10 +27,9 @@ public class CounterView implements java.util.Observer {
 	/**
 	 * Initialize a CounterView, which shows value of a counter.
 	 * 
-	 * @param counter
-	 *            the Counter to show.
+	 * @param counter the Counter to show.
 	 */
-	public CounterView(NumberGame game) {
+	public LastView(NumberGame game) {
 		this.game = game;
 		initComponents();
 	}
@@ -45,8 +46,8 @@ public class CounterView implements java.util.Observer {
 		// The label that will show the counter value.
 		label = new Label("");
 		// make the label big enough
-		label.setPrefWidth(400);
-		label.setFont(new Font("Arial", 30));
+		label.setPrefWidth(500);
+		label.setFont(new Font("Arial", 30.0));
 		label.setAlignment(Pos.CENTER);
 		// Add the label to the HBox. You can all more components, too.
 		root.getChildren().add(label);
@@ -54,24 +55,24 @@ public class CounterView implements java.util.Observer {
 		Scene scene = new Scene(root);
 		// show the scene on the stage
 		stage.setScene(scene);
-		stage.setTitle("Counter");
+		stage.setTitle("Last guess");
 		stage.sizeToScene();
 	}
 
 	/** Show the window and update the counter value. */
 	public void run() {
 		stage.show();
-		displayCount();
+		displayLast();
 	}
 
-	/** Close the window. */
+	/** Close the window */
 	public void close() {
 		stage.close();
 	}
 
-	/** Show how many times that user guessing the number. */
-	public void displayCount() {
-		label.setText(String.format("You guessed %2d times", game.getCount()));
+	/** Show the number of last time that user guessing the number. */
+	public void displayLast() {
+		label.setText(String.format("You guessed %2d from the last time.", game.getLastGuess()));
 	}
 
 	/**
@@ -81,6 +82,6 @@ public class CounterView implements java.util.Observer {
 	 */
 	@Override
 	public void update(Observable o, Object arg) {
-		displayCount();
+		displayLast();
 	}
 }

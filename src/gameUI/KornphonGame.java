@@ -1,3 +1,4 @@
+package gameUI;
 import java.util.Random;
 
 /*
@@ -52,16 +53,22 @@ public class KornphonGame extends NumberGame {
 		lastGuess = number;
 		if (number == secretNumber) {
 			setMessage("Correct! The secret number is " + secretNumber);
+			setChanged();
+			notifyObservers();
 			return true;
 		}
 		if (number < secretNumber) {
 			setMessage("Wrong! The answer is too small - " + number + ".");
+			setChanged();
+			notifyObservers();
 			return false;
 		}
 		setMessage("Wrong! The answer is too large - " + number + ".");
+		setChanged();
+		notifyObservers();
 		return false;
 	}
-
+	
 	/**
 	 * Get the game upper bound.
 	 * 

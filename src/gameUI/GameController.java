@@ -1,3 +1,4 @@
+package gameUI;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -13,9 +14,8 @@ public class GameController {
 	TextField textfield1;
 	@FXML
 	Label label1;
+	
 	private NumberGame game;
-	private CounterView view;
-	private LastView view2;
 	private int upperBound;
 
 	/**
@@ -29,10 +29,6 @@ public class GameController {
 	public void initialize() {
 		upperBound = 100;
 		game = new KornphonGame(upperBound);
-		view = new CounterView(game);
-		view.run();
-		view2 = new LastView(game);
-		view2.run();
 	}
 
 	/**
@@ -47,8 +43,6 @@ public class GameController {
 			} else {
 				label1.setText(game.getMessage());
 			}
-			view.displayCount();
-			view2.displayLast();
 			textfield1.clear();
 		} catch (NumberFormatException e) {
 			label1.setText("Invalid Number");
@@ -62,6 +56,10 @@ public class GameController {
 		textfield1.clear();
 		label1.setText("");
 	}
+	
+	public void initializeGame(NumberGame game) {
+		this.game = game;
+	}
 
 	/**
 	 * Clear all text for ready to used.
@@ -69,12 +67,6 @@ public class GameController {
 	public void handleNewGame(ActionEvent event) {
 		upperBound = 100;
 		game = new KornphonGame(upperBound);
-		view.close();
-		view = new CounterView(game);
-		view.run();
-		view2.close();
-		view2 = new LastView(game);
-		view2.run();
 	}
 
 }
